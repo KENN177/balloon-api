@@ -168,3 +168,6 @@ async def drop_task(
         return summary
     except Exception as e:
         return f"<h3>Error processing file: {str(e)}</h3>"
+@app.get("/", response_class=HTMLResponse)
+async def root_redirect():
+    return await drop_form()
